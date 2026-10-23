@@ -1,4 +1,4 @@
-(function (global, factory) {
+﻿(function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
 	(global = global || self, factory(global.Potree = {}));
@@ -29853,21 +29853,21 @@
 
 			const vertices = [
 
-				// (±1, ±1, ±1)
+				// (Â±1, Â±1, Â±1)
 				- 1, - 1, - 1,	- 1, - 1, 1,
 				- 1, 1, - 1, - 1, 1, 1,
 				1, - 1, - 1, 1, - 1, 1,
 				1, 1, - 1, 1, 1, 1,
 
-				// (0, ±1/φ, ±φ)
+				// (0, Â±1/Ï†, Â±Ï†)
 				0, - r, - t, 0, - r, t,
 				0, r, - t, 0, r, t,
 
-				// (±1/φ, ±φ, 0)
+				// (Â±1/Ï†, Â±Ï†, 0)
 				- r, - t, 0, - r, t, 0,
 				r, - t, 0, r, t, 0,
 
-				// (±φ, 0, ±1/φ)
+				// (Â±Ï†, 0, Â±1/Ï†)
 				- t, 0, - r, t, 0, - r,
 				- t, 0, r, t, 0, r
 			];
@@ -38324,7 +38324,7 @@
 
 	/**
 	 * Bezier Curves formulas obtained from
-	 * http://en.wikipedia.org/wiki/Bézier_curve
+	 * http://en.wikipedia.org/wiki/BÃ©zier_curve
 	 */
 
 	function CatmullRom( t, p0, p1, p2, p3 ) {
@@ -40263,19 +40263,19 @@
 			const coeff = this.coefficients;
 
 			// band 0
-			target.copy( coeff[ 0 ] ).multiplyScalar( 0.886227 ); // π * 0.282095
+			target.copy( coeff[ 0 ] ).multiplyScalar( 0.886227 ); // Ï€ * 0.282095
 
 			// band 1
-			target.addScaledVector( coeff[ 1 ], 2.0 * 0.511664 * y ); // ( 2 * π / 3 ) * 0.488603
+			target.addScaledVector( coeff[ 1 ], 2.0 * 0.511664 * y ); // ( 2 * Ï€ / 3 ) * 0.488603
 			target.addScaledVector( coeff[ 2 ], 2.0 * 0.511664 * z );
 			target.addScaledVector( coeff[ 3 ], 2.0 * 0.511664 * x );
 
 			// band 2
-			target.addScaledVector( coeff[ 4 ], 2.0 * 0.429043 * x * y ); // ( π / 4 ) * 1.092548
+			target.addScaledVector( coeff[ 4 ], 2.0 * 0.429043 * x * y ); // ( Ï€ / 4 ) * 1.092548
 			target.addScaledVector( coeff[ 5 ], 2.0 * 0.429043 * y * z );
-			target.addScaledVector( coeff[ 6 ], 0.743125 * z * z - 0.247708 ); // ( π / 4 ) * 0.315392 * 3
+			target.addScaledVector( coeff[ 6 ], 0.743125 * z * z - 0.247708 ); // ( Ï€ / 4 ) * 0.315392 * 3
 			target.addScaledVector( coeff[ 7 ], 2.0 * 0.429043 * x * z );
-			target.addScaledVector( coeff[ 8 ], 0.429043 * ( x * x - y * y ) ); // ( π / 4 ) * 0.546274
+			target.addScaledVector( coeff[ 8 ], 0.429043 * ( x * x - y * y ) ); // ( Ï€ / 4 ) * 0.546274
 
 			return target;
 
@@ -66399,7 +66399,7 @@ void main() {
 				}else {
 					let response = await fetch(urlOctree, {
 						headers: {
-							'content-type': 'multipart/byteranges',
+							
 							'Range': `bytes=${first}-${last}`,
 						},
 					});
@@ -66596,7 +66596,7 @@ void main() {
 
 			let response = await fetch(hierarchyPath, {
 				headers: {
-					'content-type': 'multipart/byteranges',
+					
 					'Range': `bytes=${first}-${last}`,
 				},
 			});
@@ -68384,7 +68384,7 @@ void main() {
 		if(degrees < 0){
 			degrees = 360 + degrees;
 		}
-		const txtDegrees = `${degrees.toFixed(2)}°`;
+		const txtDegrees = `${degrees.toFixed(2)}Â°`;
 		const labelDir = northPos.clone().add(p1.position).multiplyScalar(0.5).sub(p0.position);
 		if(labelDir.length() > 0){
 			labelDir.z = 0;
@@ -73764,8 +73764,8 @@ void main() {
 	/**
 	 *
 	 * @author sigeom sa / http://sigeom.ch
-	 * @author Ioda-Net Sàrl / https://www.ioda-net.ch/
-	 * @author Markus Schütz / http://potree.org
+	 * @author Ioda-Net SÃ rl / https://www.ioda-net.ch/
+	 * @author Markus SchÃ¼tz / http://potree.org
 	 *
 	 */
 
@@ -73876,7 +73876,7 @@ void main() {
 	/**
 	 *
 	 * @author sigeom sa / http://sigeom.ch
-	 * @author Ioda-Net Sàrl / https://www.ioda-net.ch/
+	 * @author Ioda-Net SÃ rl / https://www.ioda-net.ch/
 	 * @author Markus Schuetz / http://potree.org
 	 *
 	 */
@@ -76635,10 +76635,10 @@ ENDSEC
 			this.shear = [0, 0];
 
 			// const style = ``;
-			this.elUp =    $(`<input type="button" value="🡅" style="position: absolute; top: 10px; left: calc(50%); z-index: 1000" />`);
-			this.elRight = $(`<input type="button" value="🡆" style="position: absolute; top: calc(50%); right: 10px; z-index: 1000" />`);
-			this.elDown =  $(`<input type="button" value="🡇" style="position: absolute; bottom: 10px; left: calc(50%); z-index: 1000" />`);
-			this.elLeft =  $(`<input type="button" value="🡄" style="position: absolute; top: calc(50%); left: 10px; z-index: 1000" />`);
+			this.elUp =    $(`<input type="button" value="ðŸ¡…" style="position: absolute; top: 10px; left: calc(50%); z-index: 1000" />`);
+			this.elRight = $(`<input type="button" value="ðŸ¡†" style="position: absolute; top: calc(50%); right: 10px; z-index: 1000" />`);
+			this.elDown =  $(`<input type="button" value="ðŸ¡‡" style="position: absolute; bottom: 10px; left: calc(50%); z-index: 1000" />`);
+			this.elLeft =  $(`<input type="button" value="ðŸ¡„" style="position: absolute; top: calc(50%); left: 10px; z-index: 1000" />`);
 			this.elExit = $(`<input type="button" value="Back to 3D view" style="position: absolute; bottom: 10px; right: 10px; z-index: 1000" />`);
 
 			this.elExit.click( () => {
@@ -79647,7 +79647,7 @@ ENDSEC
 				const images = e.images;
 
 				const imagesIcon = `${Potree.resourcePath}/icons/picture.svg`;
-				const node = createNode(imagesID, "360° images", imagesIcon, images);
+				const node = createNode(imagesID, "360Â° images", imagesIcon, images);
 
 				images.addEventListener("visibility_changed", () => {
 					if(images.visible){
@@ -84857,7 +84857,7 @@ ENDSEC
 					if ( source.mimeType === 'image/png' ) {
 
 						// Inspect the PNG 'IHDR' chunk to determine whether the image could have an
-						// alpha channel. This check is conservative — the image could have an alpha
+						// alpha channel. This check is conservative â€” the image could have an alpha
 						// channel with all values == 1, and the indexed type (colorType == 3) only
 						// sometimes contains alpha.
 						//
@@ -90482,3 +90482,4 @@ ENDSEC
 
 })));
 //# sourceMappingURL=potree.js.map
+
